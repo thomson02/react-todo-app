@@ -8,14 +8,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 // Add our style
 import './assets/style/index.css';
 
-var checkExists = setInterval(function() {
-	if (document.getElementById('root').length) {
-		clearInterval(checkExists);
-		ReactDOM.render(
-			<App/>,
-			document.getElementById('root')
-		);
-	}	
-}, 250);
+
+window.addEventListener("bob", function() {
+	console.log("pre-reactdom");
+	ReactDOM.render(
+		<App/>,
+		document.getElementById('root')
+	);
+	console.log("post-reactdom");
+});
+		
 
 
